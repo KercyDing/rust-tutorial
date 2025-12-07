@@ -1,0 +1,5 @@
+## MacOS Trash
+**/.DS_Store
+
+## Rust Build
+**/target
