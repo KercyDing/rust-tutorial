@@ -27,6 +27,10 @@ name = "generics"
 version = "0.1.0"
 
 [[package]]
+name = "lifetimes"
+version = "0.1.0"
+
+[[package]]
 name = "methods"
 version = "0.1.0"
 
