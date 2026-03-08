@@ -1,4 +1,4 @@
-fn main () {
+fn main() {
     println!("Hello, world!");
 
     let a = 5;
@@ -11,17 +11,16 @@ fn main () {
     println!();
 
     {
-        let mut b = 10;     // * b加上了mut
+        let mut b = 10; // * b加上了mut
         println!("The value of b: {}", b);
 
         // a = 10;      // ERR a的值不能改变
-        b = 20;         // * b的值可以修改
-        println!("The new value of b: {}", b);
-        println!("");
+        b = 20; // * b的值可以修改
+        println!("The new value of b: {}\n", b);
     }
     // println!("The value of b is: {}", b);        // ERR b不在作用域中
 
-    let c = a;     // * c是i32类型，可以copy
+    let c = a; // * c是i32类型，可以copy
     println!("The value of a: {}", a);
     println!("The value of c: {}", c);
 

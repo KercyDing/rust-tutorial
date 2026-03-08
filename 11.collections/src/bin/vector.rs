@@ -1,7 +1,10 @@
 fn main() {
     // let v1: Vec<i32> = Vec::new(); // ERR: 不加mut的vector不能添加元素
-    let mut v1: Vec<i32> = Vec::new(); // * 使用new函数创建
-    v1.push(3);
+    #[allow(clippy::vec_init_then_push)]
+    {
+        let mut v1: Vec<i32> = Vec::new(); // * 使用new函数创建
+        v1.push(3);
+    }
 
     let mut v2 = vec![1, 3, 5]; // * 使用vec!创建
 

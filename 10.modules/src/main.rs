@@ -5,11 +5,15 @@ use mytable::{MyTable, write_something}; // * 默认不写就是当前路径(或
 
 // * 定义两个内联模块，防止函数名冲突
 mod student {
-    pub fn speak () {println!("I love study!")}
+    pub fn speak() {
+        println!("I love study!")
+    }
 }
 
 mod teacher {
-    pub fn speak () {println!("You're so stupid!")}
+    pub fn speak() {
+        println!("You're so stupid!")
+    }
 }
 
 fn main() {

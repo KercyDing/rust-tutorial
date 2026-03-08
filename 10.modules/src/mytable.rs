@@ -20,9 +20,11 @@ impl MyTable {
     }
 }
 
-pub fn write_something () {
+pub fn write_something() {
     println!("The most handsome man in the world is:");
     kercy();
 }
 
-fn kercy () {println!("Kercy!")}
+fn kercy() {
+    println!("Kercy!")
+}

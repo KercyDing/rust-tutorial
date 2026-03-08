@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-fn main(){
+fn main() {
     let sub1 = String::from("Chinese");
     let num1 = 130;
     let sub2 = String::from("Math");
@@ -8,20 +8,20 @@ fn main(){
 
     let mut scores = HashMap::new();
     scores.insert(sub1, num1);
-    scores.insert(sub2.clone(), num2.clone());
+    scores.insert(sub2.clone(), num2);
 
     println!("{:#?}", scores);
 
-    // println!("sub1: {}, num1: {}", sub1, num1); // ERR: sub1 num1被插入HashMap，所有权被转移
-    println!("sub2: {}, num2: {}", sub2, num2); // * sub2 num2采用clone所以所有权还在
-    
+    // println!("sub1: {}, num1: {}", sub1, num1); // ERR: sub1被插入HashMap，所有权被转移（num2默认copy）
+    println!("sub2: {}, num2: {}", sub2, num2);
+
     // *--- 1. 直接读取+match匹配
     let sub_name = String::from("Math");
     match scores.get(&sub_name) {
         Some(score) => println!("The score is: {}", score),
         None => println!("Can not find the subject!"),
     }
-    
+
     // *--- 2. 使用copied()和unwrap_or()读取
     // * copied()将Option(&i32)转化为Option(i32)
     // * unwrap_or()如果是None则返回0
@@ -29,7 +29,7 @@ fn main(){
     println!("Chinese score: {}", score);
     println!();
 
-    // * 遍历: 由于HashMap是无需的，所以结果也是随机的
+    // * 遍历: 由于HashMap是无序的，所以结果也是随机的
     for (key, value) in &scores {
         println!("{}: {}", key, value);
     }

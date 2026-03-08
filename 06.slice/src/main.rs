@@ -1,4 +1,4 @@
-fn main () {
+fn main() {
     // *--- 1. 字符串切片 --- //
     let str1 = String::from("Hello, world!");
     let s = &str1[0..5]; // * 左闭右开

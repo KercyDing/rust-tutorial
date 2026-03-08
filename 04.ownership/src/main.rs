@@ -7,11 +7,11 @@ fn main() {
     // *--- 2. 堆数据的 Move ---
     let s1 = String::from("Kercy");
     /*
-        指针拷贝，所有权转移
-        s1不再拥有string的所有权
-     */
-    let s2 = s1; 
-    
+       指针拷贝，所有权转移
+       s1不再拥有string的所有权
+    */
+    let s2 = s1;
+
     // println!("s1: {}", s1); // ERR: 移动之后所有权被转移
 
     println!("s2: {}", s2);

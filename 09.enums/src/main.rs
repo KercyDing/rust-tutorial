@@ -5,10 +5,10 @@ fn main() {
     let msg = Message::Move { x: 10, y: 20 };
     let w = Message::Write(String::from("Hello"));
     let color = Message::ChangeColor(1, 3, 5);
-    
+
     // 调用它的方法
     q.call();
-    msg.call(); 
+    msg.call();
     w.call();
     color.call();
 
@@ -34,17 +34,21 @@ fn main() {
 #[derive(Debug)]
 enum Message {
     Quit,
-    Move {x: i32, y: i32},
-    Write (String), // Tuple struct variant
+    Move {
+        x: i32,
+        y: i32,
+    },
+    Write(String), // Tuple struct variant
     #[allow(dead_code)]
-    ChangeColor (i32, i32, i32),
+    ChangeColor(i32, i32, i32),
 }
 
 impl Message {
     fn call(&self) {
-        match self { // * match将枚举拆开，self指Message
+        match self {
+            // * match将枚举拆开，self指Message
             Message::Quit => println!("Quit!"), // * match用=>来匹配
-            Message::Move {x, y} => println!("Move to ({}, {}).", x, y),
+            Message::Move { x, y } => println!("Move to ({}, {}).", x, y),
             Message::Write(text) => println!("Text: {}.", text),
             Message::ChangeColor(_, _, _) => println!("Color Changed!"),
         }
